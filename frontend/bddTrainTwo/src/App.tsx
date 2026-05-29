@@ -6,7 +6,6 @@ function App() {
     <>
       <HomePage />
       <HomePage />
-      <HomePage />
     </>
   );
 }
