@@ -6,6 +6,11 @@ on:
       - main
       - dev
 
+  pull_request:
+    branches:
+      - main
+      - dev
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,12 +19,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      #######################################
-
-      ## BackEnd ##
-
-      #######################################
-
       - name: Install Backend Dependencies
         working-directory: backend
         run: npm ci
@@ -27,11 +26,6 @@ jobs:
       - name: Build Backend
         working-directory: backend
         run: npm run build
-      #######################################
-
-      ## FrontendEnd ##
-
-      #######################################
 
       - name: Install Frontend Dependencies
         working-directory: frontend/bddTrainTwo
