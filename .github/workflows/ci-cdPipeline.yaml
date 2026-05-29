@@ -23,9 +23,17 @@ jobs:
         working-directory: backend
         run: npm ci
 
+        #=================================
+        #   Backend
+        #=================================
+
       - name: Build Backend
         working-directory: backend
         run: npm run build
+
+        #=================================
+        #   Frontend
+        #=================================
 
       - name: Install Frontend Dependencies
         working-directory: frontend/bddTrainTwo
@@ -34,6 +42,13 @@ jobs:
       - name: Build Frontend
         working-directory: frontend/bddTrainTwo
         run: npm run build
+
+      - name: run BDD Test 
+        working-directory: BDD
+        run: npm run test:bdd
+        #=================================
+        #   final
+        #=================================
 
       - name: List Files
         run: ls -la
