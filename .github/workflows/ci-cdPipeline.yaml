@@ -43,6 +43,11 @@ jobs:
         working-directory: frontend/bddTrainTwo
         run: npm run build
 
+      - name: Install dependencies
+        working-directory: BDD
+        run: npm install
+
+
       - name: run BDD Test 
         working-directory: BDD
         run: npm run test:bdd
