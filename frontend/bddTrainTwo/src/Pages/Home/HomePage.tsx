@@ -3,8 +3,6 @@ export default function HomePage() {
     <div>
       <h1> Hello World Jesus Love You</h1>
       <h1> Hello World Jesus Love You</h1>
-      <h1> Hello World Jesus Love You</h1>
-      <h1> Hello World Jesus Love You</h1>
     </div>
   );
 }
