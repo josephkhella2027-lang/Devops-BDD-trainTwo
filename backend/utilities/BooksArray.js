@@ -37,5 +37,6 @@ const books = [
     price: 300,
   },
 ];
+export default books;
 
-module.exports = books;
+//module.exports = books;

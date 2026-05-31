@@ -1,4 +1,4 @@
 export const API = {
-  books: "/api/books",
+  getBooks: "/api/books",
   addBook: "/api/add-book",
 };
