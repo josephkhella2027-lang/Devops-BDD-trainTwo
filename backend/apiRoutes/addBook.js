@@ -28,7 +28,7 @@ export default router;
  */
 
 const express = require("express");
-const books = require("../")
+const books = require("../utilities/BooksArray.js");
 
 const router = express.Router();
 

@@ -19,6 +19,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      # =========================
+      # Backend
+      # =========================
       - name: Install Backend Dependencies
         working-directory: backend
         run: npm ci
@@ -26,7 +29,14 @@ jobs:
       - name: Build Backend
         working-directory: backend
         run: npm run build
+        
+      - name: Run backend tests
+        working-directory: ./backend
+        run: npm test
 
+      # =========================
+      # Frontend
+      # =========================
       - name: Install Frontend Dependencies
         working-directory: frontend/bddTrainTwo
         run: npm ci
@@ -35,6 +45,24 @@ jobs:
         working-directory: frontend/bddTrainTwo
         run: npm run build
 
+      # =========================
+      # BDD
+      # =========================
+      - name: Install BDD Dependencies
+        working-directory: BDD
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        working-directory: BDD
+        run: npx playwright install --with-deps
+
+      - name: Run BDD Tests
+        working-directory: BDD
+        run: npm run test:bdd
+
+      # =========================
+      # Final
+      # =========================
       - name: List Files
         run: ls -la
 
