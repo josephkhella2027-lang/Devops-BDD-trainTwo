@@ -29,18 +29,28 @@ export default router;
 
 const express = require("express");
 const books = require("../utilities/BooksArray.js");
-
 const router = express.Router();
+
+let newId = books.length ? Math.max(...books.map((b) => b.id)) : 0;
+
+const generateId = () => ++newId;
 
 router.post("/add-book", (req, res) => {
   try {
     const { title, description, price } = req.body;
 
     if (!title || !description || !price) {
-      return res.status(400).json({ message: "Please fill all fields" });
+      return res.status(400).json({
+        message: "Please fill all fields",
+      });
     }
 
-    const newBook = { title, description, price };
+    const newBook = {
+      id: generateId(),
+      title,
+      description,
+      price,
+    };
 
     books.push(newBook);
 
@@ -55,5 +65,4 @@ router.post("/add-book", (req, res) => {
     });
   }
 });
-
 module.exports = router;

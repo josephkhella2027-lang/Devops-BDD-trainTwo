@@ -12,8 +12,8 @@ app.listen(PORT, () => {
 
 const app = require("./app");
 
-const PORT = 3000;
+const PORT = 3500;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port localhost:${PORT}`);
 });
